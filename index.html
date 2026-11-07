@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Puranjay Mahapatra – Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8fafc;--ink:#0f172a;--body:#475569;--accent:#0f766e;--rule:#dbe3ee;
+  --pill-bg:rgba(15,118,110,.1);--card:rgba(15,23,42,.04);--glow:rgba(15,118,110,.08);
+  --font:"Inter","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0b1220;--ink:#e2e8f0;--body:#94a3b8;--accent:#5eead4;--rule:#1e293b;--pill-bg:rgba(94,234,212,.1);--card:rgba(148,163,184,.07);--glow:rgba(94,234,212,.07);color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0b1220;--ink:#e2e8f0;--body:#94a3b8;--accent:#5eead4;--rule:#1e293b;--pill-bg:rgba(94,234,212,.1);--card:rgba(148,163,184,.07);--glow:rgba(94,234,212,.07);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--font);font-size:1rem;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(600px circle at var(--x,50%) var(--y,30%),var(--glow),transparent 80%)}
+a{color:var(--ink);font-weight:500;text-underline-offset:3px}
+a:hover{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:5rem;max-width:1100px;margin:0 auto;padding:0 1.5rem}
+aside{position:sticky;top:0;align-self:start;height:100vh;height:100dvh;display:flex;flex-direction:column;padding:6rem 0 3rem}
+h1{font-weight:600;font-size:clamp(2.25rem,4.5vw,3rem);line-height:1.1;letter-spacing:-.03em;color:var(--ink);margin:0}
+.role{font-size:1.2rem;font-weight:500;color:var(--ink);margin:.75rem 0 1rem}
+.lede{max-width:20rem;margin:0}
+nav{margin-top:4rem}
+nav ul{list-style:none;margin:0;padding:0}
+nav a{display:flex;align-items:center;gap:1rem;padding:.55rem 0;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--body);text-decoration:none}
+nav a::before{content:"";height:1px;width:2rem;background:var(--body);transition:width .2s,background .2s}
+nav a:hover,nav a.on{color:var(--ink)}
+nav a:hover::before,nav a.on::before{width:4rem;background:var(--ink)}
+.foot{margin-top:auto;display:flex;align-items:center;flex-wrap:wrap;gap:.5rem 1.25rem}
+.links{list-style:none;margin:0;padding:0;display:flex;gap:1.25rem}
+.links a{display:block;line-height:0;color:var(--body)}
+.ic{width:1.6rem;height:1.6rem}
+.links a:hover{color:var(--accent)}
+#theme{font:inherit;font-size:.85rem;background:none;color:var(--body);border:1px solid var(--rule);border-radius:999px;padding:.2rem .85rem;cursor:pointer}
+#theme:hover{color:var(--ink)}
+main{padding:6rem 0}
+section{margin-bottom:6rem;scroll-margin-top:6rem}
+h2{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+p{margin:0 0 1rem}
+.item{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:1rem;margin:0 -1rem 1rem;border-radius:8px;transition:background .2s,opacity .2s}
+.item:hover{background:var(--card)}
+@media (hover:hover){.list:hover .item:not(:hover){opacity:.55}}
+.when{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin:.3rem 0 0}
+.item h3{font-size:1rem;font-weight:500;line-height:1.4;color:var(--ink);margin:0 0 .15rem}
+.item .sub{font-size:.9rem;margin:0 0 .6rem}
+.item ul.b{margin:0;padding-left:1rem}
+.item ul.b li{margin-bottom:.4rem;font-size:.95rem}
+.item p:last-child{margin-bottom:0}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:.9rem 0 0;padding:0}
+.tags li{background:var(--pill-bg);color:var(--accent);font-size:.75rem;font-weight:500;padding:.2rem .7rem;border-radius:999px}
+.skills{margin:0}
+.skills dt{font-weight:500;color:var(--ink);margin-top:1rem}
+.skills dt:first-child{margin-top:0}
+.skills dd{margin:.15rem 0 0}
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;gap:0;padding:0 1.25rem}
+  aside{position:static;height:auto;padding:3.5rem 0 1rem}
+  nav{display:none}
+  .foot{margin-top:2rem}
+  main{padding:2rem 0 4rem}
+  section{margin-bottom:4rem}
+  h2{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal;margin:0 -1.25rem 1rem;padding:.9rem 1.25rem;background:var(--bg);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+  .item{grid-template-columns:1fr;gap:.25rem}
+  .when{margin:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}nav a::before,.item{transition:none}.glow{display:none}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="wrap">
+  <aside>
+    <div>
+      <h1>Puranjay Mahapatra</h1>
+      <p class="role">Software engineer</p>
+      <p class="lede">I build enterprise backends in C# and .NET, and AI agents that work inside real workflows.</p>
+    </div>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+      </ul>
+    </nav>
+    <div class="foot">
+      <ul class="links">
+        <li><a href="mailto:puranjaymahapatra@gmail.com" aria-label="Email" title="Email"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6.5L20.5 7"/></svg></a></li>
+        <li><a href="https://github.com/Zackstar23" aria-label="GitHub" title="GitHub"><svg class="ic" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/puranjay-mahapatra-a2bb46233/" aria-label="LinkedIn" title="LinkedIn"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" fill="currentColor"/><circle cx="7.2" cy="7.6" r="1.5" fill="var(--bg)"/><rect x="5.9" y="10" width="2.6" height="7.5" fill="var(--bg)"/><path d="M10.4 10h2.5v1.1c.5-.8 1.4-1.3 2.6-1.3 2.2 0 3.1 1.4 3.1 3.6v4.1h-2.6v-3.6c0-1-.4-1.6-1.3-1.6s-1.4.6-1.4 1.6v3.6h-2.6z" fill="var(--bg)"/></svg></a></li>
+        <li><a href="https://leetcode.com/zstar23" aria-label="LeetCode" title="LeetCode"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5 5.3 12.3a2.5 2.5 0 0 0 0 3.5l3.4 3.4" stroke="currentColor"/><path d="M9 19.2l.2.2a2.5 2.5 0 0 0 3.5 0l2.6-2.6" stroke="#ffa116"/><path d="M12.5 12h8" stroke="currentColor"/></svg></a></li>
+        <li><a href="https://drive.google.com/file/d/11Wva6qo-xgsU_R8aHFunxLagEz612I2B/view?usp=sharing" aria-label="Résumé" title="Résumé"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></a></li>
+      </ul>
+      <button id="theme" type="button">Switch to light</button>
+    </div>
+  </aside>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>I’m a software engineer at GEP Worldwide in Hyderabad, working on contract-management software. Day to day that means REST integrations in C# and .NET Core, workflow automation, and AI agents that use retrieval and MCP tools to answer enterprise questions.</p>
+      <p>I graduated from NIT Rourkela in 2025 with a B.Tech in Computer Science and Engineering. Outside work I build full-stack projects in TypeScript and practise competitive programming.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="list">
+        <div class="item">
+          <p class="when">Jul 2025 – Present</p>
+          <div>
+            <h3>Software Engineer · GEP Worldwide</h3>
+            <p class="sub">Hyderabad, India</p>
+            <ul class="b">
+              <li>Built REST API integrations in C#/.NET Core for data exchange across 10K+ contract records.</li>
+              <li>Delivered a third-party risk integration with inbound data sync and event-driven notifications for 500 enterprise users.</li>
+              <li>Used AI agents to automate Word variable generation and PDF export in about two sprints.</li>
+              <li>Added retrieval-augmented generation with MCP tools to answer contextual queries inside contract workflows.</li>
+              <li>Turned recurring support-ticket patterns into reusable agent workflows, and resolved 100+ production and support issues.</li>
+            </ul>
+            <ul class="tags"><li>C#</li><li>.NET Core</li><li>Camunda</li><li>SQL</li><li>RAG</li><li>MCP</li></ul>
+          </div>
+        </div>
+        <div class="item">
+          <p class="when">May – Jul 2024</p>
+          <div>
+            <h3>Software Engineer Intern · John Deere</h3>
+            <p class="sub">Pune, India</p>
+            <ul class="b">
+              <li>Raised unit test coverage from 28.3% to over 80% across four backend services on the Operations Digital Twin project.</li>
+              <li>Used SonarQube analysis and automated tests to improve microservice reliability, across four sprints.</li>
+            </ul>
+            <ul class="tags"><li>Java</li><li>Quarkus</li><li>JUnit</li><li>Mockito</li><li>SonarQube</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="list">
+        <div class="item">
+          <p class="when">Sep 2026</p>
+          <div>
+            <h3>RAG-Powered Document Assistant</h3>
+            <p>Answers questions from documents with source citations, and calls tools for web search and database queries. Uses hybrid retrieval on PostgreSQL with pgvector, Redis caching and rate limits, and an evaluation harness for retrieval precision, recall and answer faithfulness.</p>
+            <ul class="tags"><li>Next.js</li><li>NestJS</li><li>LangChain</li><li>pgvector</li><li>Redis</li></ul>
+          </div>
+        </div>
+        <div class="item">
+          <p class="when">Jun 2026</p>
+          <div>
+            <h3>Centralized Stock Exchange Simulation</h3>
+            <p>A full-stack trading simulator with authentication, a market dashboard, wallets, holdings and buy/sell orders. It has ledger-based wallets and a price-time priority matching engine design on Redis-backed order books, with six core entities modelled in Prisma.</p>
+            <ul class="tags"><li>Next.js</li><li>NestJS</li><li>Prisma</li><li>PostgreSQL</li><li>Redis</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt><dd>C#, Java, C, C++, Python, JavaScript, TypeScript, SQL</dd>
+        <dt>Backend and web</dt><dd>.NET Core, REST APIs, Spring Boot, NestJS, Quarkus, Next.js, microservices, Camunda BPM</dd>
+        <dt>AI engineering</dt><dd>AI agents, RAG, MCP, LangChain, OpenAI API, tool calling</dd>
+        <dt>Databases</dt><dd>MySQL, SQL Server, PostgreSQL, pgvector, Redis</dd>
+        <dt>Tools and testing</dt><dd>Git, Docker, Postman, Jira, Maven, Prisma, SonarQube, JUnit, Mockito</dd>
+      </dl>
+    </section>
+
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <div class="list">
+        <div class="item">
+          <p class="when">CodeChef</p>
+          <p>Peak rating of 1633. Ranked 209th of 22,822 participants (top 1%) in Starters 94.</p>
+        </div>
+        <div class="item">
+          <p class="when">2023</p>
+          <p>Institute Rank 6 in the KIMO Tech Competition.</p>
+        </div>
+        <div class="item">
+          <p class="when">Postman</p>
+          <p>API Fundamentals Student Expert badge.</p>
+        </div>
+        <div class="item">
+          <p class="when">2021 – 2025</p>
+          <p>B.Tech in Computer Science and Engineering, National Institute of Technology Rourkela (CGPA 9.05).</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme');if(s==='light'||s==='dark')root.setAttribute('data-theme',s)}catch(e){}
+  function label(){btn.textContent=root.getAttribute('data-theme')==='dark'?'Switch to light':'Switch to dark'}
+  label();
+  btn.addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',n);label();
+    try{localStorage.setItem('theme',n)}catch(e){}
+  });
+  var links=document.querySelectorAll('nav a'),secs=document.querySelectorAll('main section');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    secs.forEach(function(s){io.observe(s)});
+  }
+  if(window.matchMedia('(pointer:fine)').matches&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    window.addEventListener('mousemove',function(e){
+      root.style.setProperty('--x',e.clientX+'px');root.style.setProperty('--y',e.clientY+'px');
+    });
+  }
+})();
+</script>
+</body>
+</html>
